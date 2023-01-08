@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+
+  redis:
+    container_name: redis
+    hostname: redis
+    image: dimvic/redis:7-alpine-tls-acl
+    volumes:
+      - "./conf/redis.conf:/usr/local/etc/redis/redis.conf"
+      - "./conf/redis.acl:/usr/local/etc/redis/redis.acl"
+    ports:
+      - "6380:6379"
+    command:
+      - redis-server
+      - /usr/local/etc/redis/redis.conf

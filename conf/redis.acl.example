@@ -1,0 +1,2 @@
+user default -@all ~* on >pass
+user user1 +@all -@dangerous +keys ~* on >pass
