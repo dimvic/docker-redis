@@ -1,3 +1,6 @@
+maxmemory 512mb
+maxmemory-policy noeviction
+
 appendonly yes
 auto-aof-rewrite-percentage 25
 auto-aof-rewrite-min-size 64mb

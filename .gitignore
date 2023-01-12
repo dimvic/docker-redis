@@ -1,5 +1,6 @@
 .idea
 conf/redis.acl
+conf/redis.conf
+docker-compose.env
 docker-compose.yml
 tls/
-usr/local/etc/redis/redis.acl

@@ -1,8 +1,8 @@
-version: '3.1'
+version: '3.4'
 
 services:
   redis:
-    container_name: redis
+    container_name: "redis_${NAME}"
     hostname: redis
     image: dimvic/redis:7-alpine-tls-acl
     volumes:
