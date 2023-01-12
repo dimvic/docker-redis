@@ -1,7 +1,6 @@
 version: '3.1'
 
 services:
-
   redis:
     container_name: redis
     hostname: redis
@@ -9,8 +8,13 @@ services:
     volumes:
       - "./conf/redis.conf:/usr/local/etc/redis/redis.conf"
       - "./conf/redis.acl:/usr/local/etc/redis/redis.acl"
+      - "redis_data:/data"
     ports:
       - "6380:6379"
     command:
       - redis-server
       - /usr/local/etc/redis/redis.conf
+    restart: always
+
+volumes:
+  redis_data:

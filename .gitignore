@@ -1,4 +1,5 @@
 .idea
-tls
+conf/redis.acl
 docker-compose.yml
+tls/
 usr/local/etc/redis/redis.acl
