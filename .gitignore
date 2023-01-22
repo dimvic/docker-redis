@@ -4,3 +4,4 @@ conf/redis.conf
 docker-compose.env
 docker-compose.yml
 tls/
+log/

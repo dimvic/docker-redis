@@ -8,6 +8,7 @@ services:
     volumes:
       - "./conf/redis.conf:/usr/local/etc/redis/redis.conf"
       - "./conf/redis.acl:/usr/local/etc/redis/redis.acl"
+      - "./log:/var/log/redis"
       - "redis_data:/data"
     ports:
       - "6380:6379"
