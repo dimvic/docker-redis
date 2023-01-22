@@ -1,0 +1,23 @@
+# Add the service file /etc/systemd/system/redis.service
+# Run `sudo systemctl daemon-reload` - load the redis service
+# Run `sudo systemctl enable docker-redis` - enable the covidx-prod service on startup
+# Run `sudo systemctl start docker-redis` - start the covidx-prod service
+
+[Unit]
+Description=Redis Service
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=simple
+User=redis
+WorkingDirectory=/home/redis/docker-redis
+ExecStart=/home/redis/docker-redis/start.sh
+ExecStop=/home/redis/docker-redis/stop.sh
+TimeoutStartSec=0
+Restart=always
+StartLimitIntervalSec=60
+StartLimitBurst=3
+
+[Install]
+WantedBy=multi-user.target
